@@ -12,21 +12,17 @@
 
 def basic_interpreter( data ):
     
-    # list of posible [orders] for [user] 
-    order_list = ['#add', '#del']
-    
-    # empty list to store [user] [date]
-    user_data = []
-    
-    # io_num = initial orphan number + index,
-    # is used to remove orphans from the begining of the list
-    io_num = 0
+    order_list = ['#add', '#del']   # list of posible [orders] for [user]
+    user_data = []                  # empty list to store [user] [date]
+    io_num = 0                      # io_num = initial orphan number + index,
 
-    data = data.split()     # 1. split in to list of objects
-    lenght = len(data)      # stor lenght of the list
-    data.append('')         # add empty object to the end, is removed in proces
+    # 1. split in to list of objects, get lenght
+    # add empty object to the end, is removed in proces
+    data = data.split()
+    lenght = len(data)
+    data.append('')
 
-    # 2. remove [orders] without [content]
+    # 2. remove orphan, [orders] without [content]
     for x in range(lenght):
         if data[x] in order_list and data[x+1] in order_list:
             pass
