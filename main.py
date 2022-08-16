@@ -2,24 +2,6 @@
 # u_list = ['f_end', 'f_show'] #list of utility functions
 # a_list = ['kon']
 
-# def f_add(data):
-#     a_list.append(data)
-#     print('new entrie [ ' + data + ' ]  has been added to the list !')
-#     print(' ')
-
-# def f_del(data):
-#     a_list.remove(data)
-#     print('entrie [ ' + data + ' ] has been removed from the list')
-
-# def f_show():
-#     print(' ')
-#     print(a_list)
-#     print(' ')
-
-# def f_end():
-#     print('Program zakączył prace')
-#     exit()
-    
 # while True:
 #     user_function = input('Wybierz fuinkcje: ')
 #     if user_function in f_list:

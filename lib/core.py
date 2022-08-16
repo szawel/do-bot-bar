@@ -1,3 +1,5 @@
+# Core function
+
 # basic_interpreter
 # stands in the first line of defense,
 # against nonsense entered by the [user],
@@ -12,32 +14,32 @@
 
 def basic_interpreter( data ):
     
-    order_list = ['#add', '#del']   # list of posible [orders] for [user]
+    orders_l = ['#add', '#del']   # list of posible [orders] for [user]
     user_data = []                  # empty list to store [user] [date]
     io_num = 0                      # io_num = initial orphan number + index,
 
-    # 1. split in to list of objects, get lenght
-    # add empty object to the end, is removed in proces
+    # 1. split in to list of objects,
+    # get lenght and
+    # add empty object to the end, it will be removed in proces
     data = data.split()
     lenght = len(data)
     data.append('')
 
     # 2. remove orphan, [orders] without [content]
     for x in range(lenght):
-        if data[x] in order_list and data[x+1] in order_list:
+        if data[x] in orders_l and data[x+1] in orders_l:
             pass
         else:
             user_data.append(data[x])
 
     # 3. orphan [order] clean up, remove orphan from end of list
-    if user_data[-1] in order_list:
+    if user_data[-1] in orders_l:
         del user_data[-1]
-
 
     # 4. orphan [content] clean up, remove orphanfrom the top of the list
     # by using [io_num] to determin list slice cut 
     for x in range(len(user_data)):
-        if user_data[x] in order_list:
+        if user_data[x] in orders_l:
             break
         else:
             io_num=x
@@ -58,8 +60,7 @@ def basic_interpreter( data ):
         user_data.clear()
     else:
         pass
-
-    # join in to the string
+    
     user_data = " ".join(user_data)
 
     return user_data
