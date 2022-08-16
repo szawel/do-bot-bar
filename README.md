@@ -1,0 +1,30 @@
+# Do Bot Bar
+## Personal Task and list Manager
+Personal bot to improve efficiency and work automation
+
+<span style="color:red">Repository will be moved soon :) </span>
+
+1. Dictionery
+1. Orders
+1. Content
+
+### 1. Dictionery:
+Dictionary of terms used in writing this program.
+
+* `[user]` - Anyone who enters the content, person. 
+* `[order]` - The functions we want to call, order ( to do some thing ) we want to give, the order is given first.
+* `[content]` - This is the content of the order, most orders require content. The **[content]** is given after **[order]**.
+* `[#]`- a special character that allows us to recognize **[order]** from the rest of user input date
+
+## 2. Orders
+that is, the commands that can be given by the user
+All `orders` should have a special character prefix `#` 
+for example: <br>
+`#add`, `#del`, `#show` and so on
+
+- `add` - add new content to the list
+- `del` - remove existing content from the list
+- `show` - show/display from the list
+
+## 3. Content
+Any content ( information, position ) that the user wants to add to the list, content can by added and content can by removd from the list. There is no history at this moment. And the content is saved in simple JSON files. There is only one list at the moment.
