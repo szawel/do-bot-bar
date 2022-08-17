@@ -12,9 +12,11 @@
 # 4. clean up, remove [order] orphan from top of list
 # 5. clean list if lenght <=2
 
-def basic_interpreter( data ):
+def BasicInterpreter( data ):
     
-    orders_l = ['#add', '#del']   # list of posible [orders] for [user]
+    orders_list = ['#add', '#del']   # list of posible [orders] for [user]
+    utils_list = ['#end', '#show'] #list of utility functions
+
     user_data = []                  # empty list to store [user] [date]
     io_num = 0                      # io_num = initial orphan number + index,
 
@@ -27,19 +29,19 @@ def basic_interpreter( data ):
 
     # 2. remove orphan, [orders] without [content]
     for x in range(lenght):
-        if data[x] in orders_l and data[x+1] in orders_l:
+        if data[x] in orders_list and data[x+1] in orders_list:
             pass
         else:
             user_data.append(data[x])
 
     # 3. orphan [order] clean up, remove orphan from end of list
-    if user_data[-1] in orders_l:
+    if user_data[-1] in orders_list:
         del user_data[-1]
 
     # 4. orphan [content] clean up, remove orphanfrom the top of the list
     # by using [io_num] to determin list slice cut 
     for x in range(len(user_data)):
-        if user_data[x] in orders_l:
+        if user_data[x] in orders_list:
             break
         else:
             io_num=x
