@@ -1,11 +1,11 @@
 def order_add(data):
-    print('add order')
+    print('----- ----- ----- ----- ----- [add] order')
 
 def order_del(data):
-    print('del order')
+    print('----- ----- ----- ----- ----- [del] order')
 
 def order_show():
-    print('skow order')
+    print('----- ----- ----- ----- ----- [skow] order')
 
 def order_end():
-    print('end order')
+    print('----- ----- ----- ----- ----- [end] order')
