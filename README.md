@@ -48,3 +48,23 @@ Any content ( information, position ) that the user wants to add to the list, co
     + set up test for main loop
 + list of orders in JSON file
     + load list from JSON
+
+
+## Note
+
+### Note 01 
+Old loop 
+
+``` python
+while True:
+    user_function = input('Wybierz fuinkcje: ')
+    if user_function in f_list:
+        user_input = input('podaj dane: ')
+        user_function = locals()[user_function]
+        user_function(user_input)
+    elif user_function in u_list:
+        user_function = locals()[user_function]
+        user_function()
+    else:
+        print('nie ma takiej funkcji ani operacji' , end='\n')
+```
