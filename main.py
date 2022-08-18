@@ -2,6 +2,7 @@ from lib import *
 
 orders_list = ['#add', '#del'] #list of list operation functions
 utils_list = ['#end', '#show'] #list of utility functions
+
 # a_list = ['kon']
 
 # while True:
@@ -28,8 +29,9 @@ def main():
 
 
     while True:
+        print("----- ----- ----- ----- ----- ")
         user_input = input('Wybierz fuinkcje: ')
-        user_input = BasicInterpreter(user_input)
+        user_input = BasicInterpreter(user_input, orders_list)
         user_input = user_input.split()
 
         if user_input[0] in orders_list:

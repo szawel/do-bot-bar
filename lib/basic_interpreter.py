@@ -12,11 +12,9 @@
 # 4. clean up, remove [order] orphan from top of list
 # 5. clean list if lenght <=2
 
-def BasicInterpreter( data ):
+def BasicInterpreter( data, orders ):
     
-    orders_list = ['#add', '#del']   # list of posible [orders] for [user]
-    utils_list = ['#end', '#show'] #list of utility functions
-
+    orders_list = orders           # list of [orders]
     user_data = []                  # empty list to store [user] [date]
     io_num = 0                      # io_num = initial orphan number + index,
 
