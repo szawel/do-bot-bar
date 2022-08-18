@@ -1,8 +1,6 @@
 # Do Bot Bar
 ## Personal Task and list Manager
-Personal bot to improve efficiency and work automation
-
-<span style="color:red">Repository will be moved soon :) </span>
+Personal bot to improve efficiency and work automation<br>
 
 # Table of Contents
 
@@ -12,9 +10,7 @@ Personal bot to improve efficiency and work automation
 - [Orders](#orders)
 - [Content](#content)
 - [Roadmap](#roadmap)
-
-
-<!-- > This is a fixture to test heading levels -->
+- [Note](#note)
 
 <!-- toc -->
 
@@ -53,7 +49,7 @@ Any content ( information, position ) that the user wants to add to the list, co
 ## Note
 
 ### Note 01 
-Old loop 
+Old loop to be store for a while
 
 ``` python
 while True:
