@@ -7,14 +7,19 @@
 
 from itertools import islice
 
-def basic_divider( data, orders_list ):
+def BasicDivider( data ):
     
-    orders = orders_list
+    temp_list = ["#add", '#del']
+
+    orders = temp_list
     new_data = []
     order_index = []
+    chunks = []
 
     # 1. import and split data
     data = data.split()
+
+    print('imput data:      ', data)
 
     # 2. finde division index
     for x in range(len(data)):
@@ -23,24 +28,30 @@ def basic_divider( data, orders_list ):
         else:
             pass
     
-    # ----- clean devision index orphan on top of the list
-    if order_index[0]==0:
-        del order_index[0]
-    else:
-        pass
+    # add len of data on the end of list
+    order_index.append(len(data))
+
+    for x in range(len(order_index)-1):
+        chunk = list(data[order_index[x]:order_index[x+1]])
+        chunks.append(chunk)
+
+    print('chunks:          ', chunks)
 
     # ----- calculate cut index (chunks sizes)
-    cut_index=[order_index[0]]
-    for x in range(1,len(order_index)):
+    cut_index=[]
+    for x in range(0,len(order_index)):
         cut_index.append(order_index[x]-order_index[x-1])
-
-    # 3. divide list in to chunks base on cut index
-    it = iter(data)
-    chunks = [list(islice(it, 0, i)) for i in cut_index]
 
     for x in range(len(chunks)):
         chunks[x] = chunks[x] = " ".join(chunks[x])
         new_data.append(chunks[x])
-    
+
     # 5. return data
     return new_data
+
+# temp = BasicDivider('#add 1 2 3 #add 4 5 #add 6 7 8 9')
+# print("----- ----- ----- ----- -----")
+# print('                 ', temp)
+
+# for x in temp:
+#     print(x)
