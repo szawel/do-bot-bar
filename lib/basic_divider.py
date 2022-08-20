@@ -1,52 +1,52 @@
+# BasicDivider - divide orders
+# if input data is empty pass empty list
+# if input data conteins one order pass one order
+# if input data conteins meny (n) orders, divide orders in to (n) object list 
 
-# 1. import list
-# 2. finde division index
-# 3. divide list in to chunks
-# 4. join chunks in to single objects
-# 5. return data
-
-from itertools import islice
+# 1. Check if input data contains any data
+# 2. Split data
+# 3. Finde division index by compering data_list to order_list
+# 4. Divide data in to chunks
+# 5. Join chunks in to single objects
+# 6. return data (list of orders)
 
 def BasicDivider( data, orders_list ):
-    
+
+
     orders = orders_list
-    new_data = []
+
     order_index = []
     chunks = []
+    out_data = []
+
+    # 1. Check if user input contains any data
 
     if len(data)==0:
-        new_data = []
+        out_data = []
     else:
 
-        # 1. import and split data
+        # 2. Split data
         data = data.split()
 
-        print('imput data:      ', data)
-
-        # 2. finde division index
+        # 3. Finde division index
         for x in range(len(data)):
             if data[x] in orders:
                 order_index.append(x)
             else:
                 pass
         
-        # add len of data on the end of list
+        # add lenght of data on the end of order_index
         order_index.append(len(data))
-
+        
+        # 4. Divide data in to chunks
         for x in range(len(order_index)-1):
             chunk = list(data[order_index[x]:order_index[x+1]])
             chunks.append(chunk)
 
-        print('chunks:          ', chunks)
-
-        # ----- calculate cut index (chunks sizes)
-        cut_index=[]
-        for x in range(0,len(order_index)):
-            cut_index.append(order_index[x]-order_index[x-1])
-
+        # 5. Join chunks in to single objects
         for x in range(len(chunks)):
             chunks[x] = chunks[x] = " ".join(chunks[x])
-            new_data.append(chunks[x])
+            out_data.append(chunks[x])
 
-        # 5. return data
-    return new_data
+
+    return out_data
