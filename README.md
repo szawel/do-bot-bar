@@ -1,6 +1,6 @@
 # Do Bot Bar
-## Personal Task and list Manager
-Personal bot to improve efficiency and work automation<br>
+## About Do Bot Bar
+Python based program to automate tasks and to runnin predefined script. The program works by typing the [orders] and executing predefined actions, script and so on. The main function of the program is the interpretation of user entries, and the open architecture allows any functions to be added and modified at any time, and fast and intuitive navigation without using a mouse or other pointing device, just keyboard.
 
 # Table of Contents
 
