@@ -7,51 +7,46 @@
 
 from itertools import islice
 
-def BasicDivider( data ):
+def BasicDivider( data, orders_list ):
     
-    temp_list = ["#add", '#del']
-
-    orders = temp_list
+    orders = orders_list
     new_data = []
     order_index = []
     chunks = []
 
-    # 1. import and split data
-    data = data.split()
+    if len(data)==0:
+        new_data = []
+    else:
 
-    print('imput data:      ', data)
+        # 1. import and split data
+        data = data.split()
 
-    # 2. finde division index
-    for x in range(len(data)):
-        if data[x] in orders:
-            order_index.append(x)
-        else:
-            pass
-    
-    # add len of data on the end of list
-    order_index.append(len(data))
+        print('imput data:      ', data)
 
-    for x in range(len(order_index)-1):
-        chunk = list(data[order_index[x]:order_index[x+1]])
-        chunks.append(chunk)
+        # 2. finde division index
+        for x in range(len(data)):
+            if data[x] in orders:
+                order_index.append(x)
+            else:
+                pass
+        
+        # add len of data on the end of list
+        order_index.append(len(data))
 
-    print('chunks:          ', chunks)
+        for x in range(len(order_index)-1):
+            chunk = list(data[order_index[x]:order_index[x+1]])
+            chunks.append(chunk)
 
-    # ----- calculate cut index (chunks sizes)
-    cut_index=[]
-    for x in range(0,len(order_index)):
-        cut_index.append(order_index[x]-order_index[x-1])
+        print('chunks:          ', chunks)
 
-    for x in range(len(chunks)):
-        chunks[x] = chunks[x] = " ".join(chunks[x])
-        new_data.append(chunks[x])
+        # ----- calculate cut index (chunks sizes)
+        cut_index=[]
+        for x in range(0,len(order_index)):
+            cut_index.append(order_index[x]-order_index[x-1])
 
-    # 5. return data
+        for x in range(len(chunks)):
+            chunks[x] = chunks[x] = " ".join(chunks[x])
+            new_data.append(chunks[x])
+
+        # 5. return data
     return new_data
-
-# temp = BasicDivider('#add 1 2 3 #add 4 5 #add 6 7 8 9')
-# print("----- ----- ----- ----- -----")
-# print('                 ', temp)
-
-# for x in temp:
-#     print(x)
