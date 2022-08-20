@@ -20,21 +20,17 @@ class Test_BasicDivider:
 
 
     def test_BasicDivider_multi_order_call(self):
-        todo = BasicDivider('#add jeden #add dwa #add trzy')
+        todo = BasicDivider('#add jeden #add dwa #add trzy', user_order_lists)
         assert todo == (['#add jeden', '#add dwa', '#add trzy'])
 
     def test_BasicDivider_dual_order_call(self):
-        todo = BasicDivider('#add jeden #del ja')
+        todo = BasicDivider('#add jeden #del ja', user_order_lists)
         assert todo == (['#add jeden', '#del ja'])
 
     def test_BasicDivider_single_multi_order_call(self):
-        todo = BasicDivider('#del jeden')
+        todo = BasicDivider('#del jeden', user_order_lists)
         assert todo == (['#del jeden'])
 
     def test_BasicDivider_empty_multi_order_call(self):
-        todo = BasicDivider('')
+        todo = BasicDivider('', user_order_lists)
         assert todo == ([])
-
-    def test_BasicDivider_next_multi_order_call(self):
-        todo = BasicDivider('#add jueden csek c nwe i vnpo iwec jp iecjdfoi nfdoi nidnifen #add jueden csek c nwe i vnpo iwec jp iecjdfoi nfdoi nidnifen #add jueden csek c nwe i vnpo iwec jp iecjdfoi nfdoi nidnifen #add jueden csek c nwe i vnpo iwec jp iecjdfoi nfdoi nidnifen')
-        assert todo == (['#add jueden csek c nwe i vnpo iwec jp iecjdfoi nfdoi nidnifen', '#add jueden csek c nwe i vnpo iwec jp iecjdfoi nfdoi nidnifen', '#add jueden csek c nwe i vnpo iwec jp iecjdfoi nfdoi nidnifen', '#add jueden csek c nwe i vnpo iwec jp iecjdfoi nfdoi nidnifen'])
