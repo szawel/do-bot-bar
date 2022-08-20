@@ -7,13 +7,9 @@ with open('settings/orders.json') as f:
 
 # load orders list
 for state in data['user_orders']:
-    orders_list = state['list_orders']
+    orders_list = state['orders']
 
-# load utility list 
-for state in data['user_orders']:
-    utility_list = state['utility_orders']
-
-user_order_lists = orders_list + utility_list
+user_order_lists = orders_list
 
 class Test_Pipeline:
 

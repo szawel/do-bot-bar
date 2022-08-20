@@ -1,8 +1,7 @@
 {
     "user_orders": [
         {
-            "list_orders": ["#add", "#del"],
-            "utility_orders": ["#show", "#exit", "#end"]
+            "orders": ["#add", "#del", "#end", "#show"]
         }
     ]
 }
