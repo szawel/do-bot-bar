@@ -12,4 +12,5 @@ def order_show(content):
 
 def order_end(content):
     data = content
-    print('order [end]', data)
+    print('order [show]', data)
+    exit()

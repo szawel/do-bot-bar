@@ -1,7 +1,7 @@
 {
     "user_orders": [
         {
-            "orders": ["#add", "#del", "#end", "#show"]
+            "orders": ["#add", "#del", "#show", "#end"]
         }
     ]
 }

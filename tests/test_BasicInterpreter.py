@@ -1,15 +1,10 @@
 import pytest
 import json
 from lib.basic_interpreter import BasicInterpreter
-
-with open('settings/orders.json') as f:
-    data = json.load(f)
+from lib.load_orders import LoadOrders
 
 # load orders list
-for state in data['user_orders']:
-    orders_list = state['orders']
-
-user_order_lists = orders_list
+user_order_lists = LoadOrders()
 
 class Test_BasicInterpreter:
 

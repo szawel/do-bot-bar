@@ -6,21 +6,13 @@ def main():
 
     from lib import order_add
     from lib import order_del
+    from lib import order_show
+    from lib import order_end
 
     orders_list = []
     utility_list = []
     command = []
-    
-    # load order file nad all lists
-    with open('settings\orders.json') as f:
-        data = json.load(f)
-
-    for state in data['user_orders']:
-        orders_list = state['orders']
-
-    user_order_lists = orders_list
-
-    # main loop
+    user_order_lists = LoadOrders()
     while True:
 
         # take input
@@ -50,5 +42,3 @@ def main():
 
 if __name__ == '__main__':
     main()
-# else:
-#     pass
